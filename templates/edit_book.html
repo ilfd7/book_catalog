@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Редактировать {{ book.title }}{% endblock %}
+{% block content %}
+<h2>Редактировать книгу</h2>
+<form method="post" class="book-form">
+    <label>Название *<input type="text" name="title" value="{{ book.title }}" required></label>
+    <label>Автор *<input type="text" name="author" value="{{ book.author }}" required></label>
+    <label>Жанр *<input type="text" name="genre" value="{{ book.genre }}" required></label>
+    <label>Год издания *<input type="number" name="year" value="{{ book.year }}" required></label>
+    <label>Описание<textarea name="description" rows="4">{{ book.description }}</textarea></label>
+    <button type="submit">Сохранить</button>
+    <a href="{{ url_for('book_detail', book_id=book.id) }}">Отмена</a>
+</form>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Добавить книгу{% endblock %}
+{% block content %}
+<h2>Добавить новую книгу</h2>
+<form method="post" class="book-form">
+    <label>Название *<input type="text" name="title" required></label>
+    <label>Автор *<input type="text" name="author" required></label>
+    <label>Жанр *<input type="text" name="genre" required></label>
+    <label>Год издания *<input type="number" name="year" required min="1000" max="2100"></label>
+    <label>Описание<textarea name="description" rows="4"></textarea></label>
+    <button type="submit">Добавить</button>
+    <a href="{{ url_for('index') }}">Отмена</a>
+</form>
+{% endblock %}
